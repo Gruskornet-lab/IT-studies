@@ -38,7 +38,7 @@ Can you chase a simulated adversary up the Pyramid of Pain until they finally ba
 **Approach:**
 I have recived a mail fro the pentester sphinx witch contains information about the task in hand an a malicious file crafted by sphinx. Scaning the file with the PicoSecure Malware Sandbox tool will reveal more details about the malicious file.
 
-<img width="2560" height="1392" alt="image" src="https://github.com/user-attachments/assets/2f9d79b5-e042-420d-8024-cb2c34e0e8ad" />
+<img width="2450" height="984" alt="image" src="https://github.com/user-attachments/assets/63af7c90-20dd-47e7-b477-a61d21858e42" />
 
 
 **Answer:**
