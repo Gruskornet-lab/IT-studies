@@ -7,7 +7,7 @@
 | **Difficulty** | Easy |
 | **Estimated Time** | 30 minutes |
 | **Completions** | 55,390 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-05-25 |
 
 ## Overview
 Can you chase a simulated adversary up the Pyramid of Pain until they finally back down?
@@ -26,12 +26,12 @@ Can you chase a simulated adversary up the Pyramid of Pain until they finally ba
 
 | # | Question | Answer |
 |---|----------|--------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-| 6 | | |
+| 1 | What is the first flag you receive after successfully detecting sample1.exe? | THM{flag1} |
+| 2 | What is the second flag you receive after successfully detecting sample2.exe? | THM{flag2} |
+| 3 | What is the third flag you receive after successfully detecting sample3.exe? | THM{flag3} |
+| 4 | What is the fourth flag you receive after successfully detecting sample4.exe? | THM{flag4} |
+| 5 | What is the fifth flag you receive after successfully detecting sample5.exe? | THM{flag5} |
+| 6 | What is the final flag you receive from Sphinx? | THM{flag6} |
 
 ---
 
