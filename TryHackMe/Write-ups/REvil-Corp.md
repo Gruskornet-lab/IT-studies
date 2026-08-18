@@ -16,14 +16,6 @@ och kartlägga hela infektionskedjan — från nedladdning till ransomware-notan
 
 ---
 
-## MITRE ATT&CK-täckning
-
-| Taktik | Teknik | ID |
-|--------|--------|----|
-|  |  |  |
-
----
-
 ## Uppgift 1 — Undersöka den komprometterade endpointen
 
 ---
