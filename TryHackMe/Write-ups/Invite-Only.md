@@ -61,12 +61,15 @@ Win32 EXE
 **Approach:**
 To find the execution parents I searched for parents using Ctrl + F in the relations tab to find the header where the answer is.
 Using the provided VM from TryHackMe that has it's own Virustotal tool we can also retrive the sha256 hashes for the two parents.
+
 **Note**
 | Parent | sha256 |
 | 361GJX7J | 047c5eec0445746862710d20e50a5dd04510b7e625fa5c1f5d48ce078001c0de |
 | installer.exe | fa102d4e3cfbe85f5189da70a52c1d266925f3efd122091cdc8fe0fc39033942 |
+
 **Answer:**
 361GJX7J,installer.exe
+
 ---
 
 **Q4: What is the name of the file being dropped? Note down the hash value for later use.**
