@@ -32,7 +32,6 @@ An L1 analyst flagged two suspicious findings — an IP and a SHA256 hash — an
 ---
 
 **Q1: What is the name of the file identified with the flagged SHA256 hash?**
-
 **Approach:**
 For this task we have been provided with a ip address and a SHA256 hash. To get the answer for this question we simply take the provided hash and paste it in virustotal
 to get the identified file. 
@@ -42,6 +41,7 @@ to get the identified file.
 
 **Answer:**
 syshelpers.exe
+
 ---
 
 **Q2: What is the file type associated with the flagged SHA256 hash?**
