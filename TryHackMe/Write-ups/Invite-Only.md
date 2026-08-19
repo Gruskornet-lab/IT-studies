@@ -152,4 +152,5 @@ Discord
 | Hash (SHA256) | 5d0509f68a9b7c415a726be75a078180e3f02e59866f193b0a99eee8e39c874f | Flagged by L1 analyst, escalated for review |
 
 ## Key Takeaways
--
+- Deep analysis with virustotal.
+- Investigating related files to the malicious IP to find out more. 
