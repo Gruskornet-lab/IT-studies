@@ -76,8 +76,10 @@ Using the provided VM from TryHackMe that has it's own Virustotal tool we can al
 
 **Approach:**
 In TryHackMes Virustotal we can scrool down a from the execution parents to find the dropped file. We also find the sha256 hash.
+
 **Note**
 dd02c105809e4ca41a5489e585ba025eddb89a91703b73a566c9903e6406a08c
+
 **Answer:**
 AClient.exe
 ---
@@ -118,8 +120,10 @@ From Trust to Threat: Hijacked Discord Invites Used for Multi-Stage Malware Deli
 
 **Approach:**
 Reading the report you will find the answer in the "Campaign Evolution and Addition of New Modules"
+
 **Answer:**
 ChromeKatz
+
 ---
 
 **Q9: Which phishing technique did the attackers use? (Use the report to answer the question.)**
@@ -128,6 +132,7 @@ ChromeKatz
 
 **Answer:**
 ClickFix
+
 ---
 
 **Q10: What is the name of the platform that was used to redirect a user to malicious servers?**
