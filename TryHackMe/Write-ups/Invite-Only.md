@@ -36,7 +36,8 @@ An L1 analyst flagged two suspicious findings — an IP and a SHA256 hash — an
 **Approach:**
 For this task we have been provided with a ip address and a SHA256 hash. To get the answer for this question we simply take the provided hash and paste it in virustotal
 to get the identified file. 
-<img width="2560" height="1392" alt="image" src="https://github.com/user-attachments/assets/1a8906f3-c39f-4f7b-a4b3-d40dcabef36f" />
+<img width="769" height="261" alt="image" src="https://github.com/user-attachments/assets/65131568-a65d-47e7-a1be-bdc12bce5d67" />
+
 
 **Answer:**
 syshelpers.exe
