@@ -36,6 +36,7 @@ An L1 analyst flagged two suspicious findings — an IP and a SHA256 hash — an
 **Approach:**
 For this task we have been provided with a ip address and a SHA256 hash. To get the answer for this question we simply take the provided hash and paste it in virustotal
 to get the identified file. 
+
 <img width="769" height="261" alt="image" src="https://github.com/user-attachments/assets/65131568-a65d-47e7-a1be-bdc12bce5d67" />
 
 
@@ -47,7 +48,9 @@ syshelpers.exe
 
 **Approach:**
 In the details tab we can see more information about the malicious file and there we find the file type
-<img width="2560" height="1392" alt="image" src="https://github.com/user-attachments/assets/4551fa95-3a62-4896-8911-a546a5870829" />
+
+<img width="1563" height="346" alt="image" src="https://github.com/user-attachments/assets/3405c4d9-8046-47f2-814c-4f826e21b170" />
+
 
 **Answer:**
 Win32 EXE
