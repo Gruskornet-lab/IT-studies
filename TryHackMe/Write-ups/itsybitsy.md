@@ -128,7 +128,7 @@ THM{SECRET__CODE}
 
 | Type | Value | Description |
 |------|-------|-------------|
-| IP |  | 192.166.65.54 | Suspected C2 IP Address |
+| IP | 192.166.65.54 | Suspected C2 IP Address |
 | Domain | Pastebin.com | Common filesharing website |
 
 ## Key Takeaways
