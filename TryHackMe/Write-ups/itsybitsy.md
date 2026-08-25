@@ -120,15 +120,15 @@ THM{SECRET__CODE}
 
 ## Tools & Commands
 
-\`\`\`bash
-# source_ip: 192.166.65.54
+\`\`\`
+ source_ip: 192.166.65.54
 \`\`\`
 
 ## Indicators of Compromise (IOCs)
 
 | Type | Value | Description |
 |------|-------|-------------|
-| IP |  | 192.166.65.54 | Suspected C2 IP Address
+| IP |  | 192.166.65.54 | Suspected C2 IP Address |
 | Domain | Pastebin.com | Common filesharing website |
 
 ## Key Takeaways
