@@ -129,7 +129,7 @@ benign.exe
 **Q9: The suspicious file downloaded from the C2 server contained malicious content with the pattern `THM{..........}`. What is that pattern?**
 
 **Approach:**
-we have the full URL from where the file was downloaded from we can check the contents of this file by checking out he URL https://controlc.com/e4d11035 the URL in its self is safe to visit and when we do we find the flag in the file.
+we have the full URL from where the file was downloaded from we can check the contents of this file by checking out he URL https://controlc[.]com/e4d11035 the URL in its self is safe to visit and when we do we find the flag in the file.
 <img width="447" height="373" alt="bild" src="https://github.com/user-attachments/assets/81d44daa-ef70-47be-bcbf-d8d17a5b5263" />
 
 
@@ -146,7 +146,7 @@ The URL in the task that the infected host visited is found in the same log as w
 <img width="622" height="355" alt="bild" src="https://github.com/user-attachments/assets/c56017ff-811d-42fd-be9f-4ae94fb7d320" />
 
 **Answer:**
-https://controlc.com/e4d11035
+https://controlc[.]com/e4d11035
 
 ---
 
