@@ -31,7 +31,7 @@ Deploy the room machine (IP assigned on deploy). Log in to the Discover tab in E
 
 **Q1: How many events were returned for the month of March 2022?**
 **Approach:**
-Starting the machine and entering the given ealstic platform with the logs that we wanna inspect for this task we first have to go to http://MACHINE IP ADDRESS:80 and filter the time range etween 1 of march 2022 and 31 march 2022. Here we will find all the logs for the task and the answer to the forst question
+Starting the machine and entering the given ealstic platform with the logs that we wanna inspect for this task we first have to go to http://MACHINE IP ADDRESS:80 and filter the time range between 1 of march 2022 and 31 march 2022. Here we will find all the logs for the task and the answer to the forst question
 
 <img width="2485" height="529" alt="image" src="https://github.com/user-attachments/assets/fb29c2f1-7e4f-4c65-8f5a-42cf3223a06d" />
 
