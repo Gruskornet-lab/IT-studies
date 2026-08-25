@@ -75,122 +75,85 @@ Chris.fort
 
 **Q4: Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+LOLBIN stands for Living Off The Land Binaries and there are many different type of possible binares that can be used in this scenario tho we do know from the question that downloads a payload. I for this searched for LOLBIN on the internet and found the github LOLBAS. Here you can find a wide range of different binaries and more and they are all labled with what functions they have. Since we are loooking for a "Download" function we can filter out the ones we don't suspect to be used in the task. From here on I used a bit of brute force and tested binaries with download function from A-Z and ended up finding Haroon using Certutil.exe to download a payload from the web. 
+<img width="1186" height="657" alt="bild" src="https://github.com/user-attachments/assets/1420260c-6241-4557-986f-818fadd212a0" />
+
+After finding the answer to this question, I really wish I just searched for http or https. But you learn by doing.  :')
 
 **Answer:**
+haroon
 
 ---
 
 **Q5: To bypass the security controls, which system process (LOLBIN) was used to download a payload from the internet?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+<img width="688" height="406" alt="bild" src="https://github.com/user-attachments/assets/e4779ed4-80cb-4fc7-b859-a54d323c9522" />
 
 **Answer:**
+certutil.exe
 
 ---
 
 **Q6: What was the date that this binary was executed by the infected host? (format: YYYY-MM-DD)**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+<img width="811" height="407" alt="bild" src="https://github.com/user-attachments/assets/98931e51-5cd9-4f1d-9edb-2c543d00e105" />
 
 **Answer:**
+22-03-04
 
 ---
 
 **Q7: Which third-party site was accessed to download the malicious payload?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+<img width="677" height="392" alt="bild" src="https://github.com/user-attachments/assets/6c552465-c211-4964-bb65-f8bf97c07f1c" />
 
 **Answer:**
+controlc.com
 
 ---
 
 **Q8: What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+<img width="700" height="380" alt="bild" src="https://github.com/user-attachments/assets/2c29eb01-8fa4-4012-a563-80a6bc28d3b5" />
 
 **Answer:**
+benign.exe
 
 ---
 
 **Q9: The suspicious file downloaded from the C2 server contained malicious content with the pattern `THM{..........}`. What is that pattern?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+we have the full URL from where the file was downloaded from we can check the contents of this file by checking out he URL https://controlc.com/e4d11035 the URL in its self is safe to visit and when we do we find the flag in the file.
+<img width="447" height="373" alt="bild" src="https://github.com/user-attachments/assets/81d44daa-ef70-47be-bcbf-d8d17a5b5263" />
+
 
 **Answer:**
+THM{KJ&*H^B0}
 
 ---
 
 **Q10: What is the URL that the infected host connected to?**
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
 
 **Approach:**
+The URL in the task that the infected host visited is found in the same log as we have been finding answers to the last few questions 
+<img width="622" height="355" alt="bild" src="https://github.com/user-attachments/assets/c56017ff-811d-42fd-be9f-4ae94fb7d320" />
 
 **Answer:**
+https://controlc.com/e4d11035
 
 ---
 
-## Tools & Commands
-
-```spl
-# Splunk SPL queries go here
-# e.g. index=win_eventlogs EventCode=4688 ...
-```
-
-## Indicators of Compromise (IOCs)
-
-| Type | Value | Description |
-|------|-------|-------------|
-| IP | | |
-| Domain | | |
-| URL | | |
-| File name | | |
-| Hash | | |
-
 ## Key Takeaways
--
-
+- The answer is dosen't always have to be so complicated.
+- One suspicious log can give of  valuable information for further investigation.
+ 
 ---
 
 *Source: [TryHackMe — Benign](https://tryhackme.com/room/benign)*
