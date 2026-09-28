@@ -42,21 +42,19 @@ Looking at the "File Relations" section we can see that the IP regularly communi
 <img width="1232" height="1145" alt="image" src="https://github.com/user-attachments/assets/7647cc62-e0c0-4e23-8004-8be7006f144f" />
 
 **Answer:**
+vpn 
 
-U
 ---
 
 **Q3:** What is the filename of the file related to the hash?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+Copying the provided hash in the detection site we will find a File Details section the information about the file. At the top we find the name of the file from the hash.
+<img width="591" height="359" alt="image" src="https://github.com/user-attachments/assets/119d9863-0be7-4269-89e2-277b485fdb33" />
+
 
 **Answer:**
+zY9sqWs.exe
 
 ---
 
@@ -69,100 +67,83 @@ U
 |  |  |  |
 
 **Approach:**
+We can use Ctrl + F shortcut to search for Microsoft on the site and in the vendor analysis list we find Microsoft threat signature.
+<img width="702" height="29" alt="image" src="https://github.com/user-attachments/assets/037258a8-f697-4da5-bbe6-1eb521ce4a7b" />
+
 
 **Answer:**
+Trojan:Win32/LummaStealer.PM!MTB
 
 ---
 
 **Q5:** One of the contacted domains is part of a large malicious infrastructure cluster. Based on its HTTPS certificate, how many domains are linked to the same campaign?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+To find the answer for this we have to find the domains the file is communicating with and if we check in the file communication behavior [1] section we find 3 domains that stand out from the rest. If we enter each on and go to Latest HTTPS Certificate and look at the details we find SAN (subject alternative name). Adding all SAN from the 3 suspicious domains related to the malicious file we get the answer. 
+[1]
+<img width="1216" height="466" alt="image" src="https://github.com/user-attachments/assets/0c77fdea-4c42-4b4a-b7b2-7ae6d5780cc3" />
+[2]
+<img width="486" height="1232" alt="image" src="https://github.com/user-attachments/assets/4f8249e6-de46-4041-aa53-d02c6dcbffae" />
+
 
 **Answer:**
+151
 
 ---
 
 **Q6:** The file matches one of the YARA rules made by "kevoreilly". What line is present in the rule's "condition" field?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
 
 **Approach:**
+If we search for kevoreilly who is the developer of CAPEv2 
 
 **Answer:**
+uint16(0) == 0x5a4d and any of them
 
 ---
 
 **Q7:** The file is also mentioned in a threat intel report. What is the title of the report mentioning this hash?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+Searching on google we find the incident report mentioning this hash
 
 **Answer:**
+Behind the Curtain: How Lumma Affiliates Operate
 
 ---
 
 **Q8:** Which team did the author of the malware start collaborating with in early 2024?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+In the report
 
 **Answer:**
+GhostSocks
 
 ---
 
 **Q9:** A Mexican-based affiliate related to the malware family also uses other infostealers. Which mentioned infostealer targets Android systems?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+In the report
 
 **Answer:**
+CraxsRAT
 
 ---
 
 **Q10:** The report states that the affiliates behind the malware use the services of AnonRDP. Which MITRE ATT&CK sub-technique does this align with?
 
-**MITRE ATT&CK:**
-
-| Tactic | Technique | ID |
-|--------|-----------|----|
-|  |  |  |
-
 **Approach:**
+CraxsRAT uses AnonRDP which align with the MITRE ATT&CK sub-technique of Virtual Private Server which we can find the answer for at the bottom of the page as the incident report provides "Appendix C — MITRE ATT&CK Techniques"
+<img width="1039" height="594" alt="image" src="https://github.com/user-attachments/assets/f29764bc-2e2d-4108-8560-4829d3acb746" />
+
 
 **Answer:**
+T1583.003
 
 ---
 
-## Tools & Commands
-
-```bash
-Virustotal.com
-```
 
 ## Indicators of Compromise (IOCs)
 
@@ -173,4 +154,7 @@ Virustotal.com
 | Hash | b8e02f2bc0ffb42e8cf28e37a26d8d825f639079bf6d948f8debab6440ee5630 | Suspicious "security check" binary (SHA256) |
 
 ## Key Takeaways
--
+- Analysis
+- SAN
+- CAPE which I haven't heard of until now and is for sure a valuable tool for SOC use.
+- MITRE ATT&CT
