@@ -12,7 +12,7 @@
 ## Overview
 Gather threat intel to determine the risks and assist incident response.
 
-As a new SOC analyst, you receive an alert: "Unusual VPN login of susan.martin@probablyfine.thm from 37.19.201.132 (Singapore)". According to the handover notes, Susan is attending a conference in Singapore, but she confirms she did not log in to the VPN. While on a public café Wi-Fi hotspot she was prompted to install a "security check" tool, and host telemetry shows a suspicious binary (SHA256: `b8e02f2bc0ffb42e8cf28e37a26d8d825f639079bf6d948f8debab6440ee5630`). The goal is to verify the IP and the file in TryDetectThis and work out what the binary does.
+As a new SOC analyst, you receive an alert: "Unusual VPN login of susan[.]martin@probablyfine[.]thm from 37[.]19[.]201[.]132 (Singapore)". According to the handover notes, Susan is attending a conference in Singapore, but she confirms she did not log in to the VPN. While on a public café Wi-Fi hotspot she was prompted to install a "security check" tool, and host telemetry shows a suspicious binary (SHA256: `b8e02f2bc0ffb42e8cf28e37a26d8d825f639079bf6d948f8debab6440ee5630`). The goal is to verify the IP and the file in TryDetectThis and work out what the binary does.
 
 **Tool:** TryDetectThis — https://static-labs.tryhackme.cloud/apps/trydetectthis/
 
