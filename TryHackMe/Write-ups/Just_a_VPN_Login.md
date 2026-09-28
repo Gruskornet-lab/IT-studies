@@ -149,7 +149,7 @@ T1583.003
 
 | Type | Value | Description |
 |------|-------|-------------|
-| IP | 37.19.201.132 | Source of unusual VPN login (Singapore) |
+| IP | 37[.]19[.]201[.]132 | Source of unusual VPN login (Singapore) |
 | Domain |  |  |
 | Hash | b8e02f2bc0ffb42e8cf28e37a26d8d825f639079bf6d948f8debab6440ee5630 | Suspicious "security check" binary (SHA256) |
 
