@@ -7,7 +7,7 @@
 | **Difficulty** | Easy |
 | **Estimated Time** | 45 minutes |
 | **Completions** | 3,162 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-09-29 |
 
 ## Overview
 Gather threat intel to determine the risks and assist incident response.
