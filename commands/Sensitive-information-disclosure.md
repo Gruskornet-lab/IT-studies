@@ -58,3 +58,55 @@ def retrieve(top_k=2, apply_filter=False):
 # apply_filter=False, top_k=3: dessutom deleted_old_policy
 # apply_filter=True:           bara public_policy
 ```
+RAG-demo: testdata
+
+Simulerar en vektordatabas med tre dokument och en fråga. Ett dokument är publikt, ett konfidentiellt och ett är raderat men ligger kvar (stale embedding). Alla tre ligger nära frågan i vektorrymden.
+
+```python
+import numpy as np
+
+documents = [
+    {
+        "id": "public_policy",                        # dokumentets namn
+        "embedding": np.array([0.8, 0.1]),            # textens position i vektorrymden
+        "metadata": {"access": "public"},             # behörighetsnivå, det filtret kontrollerar
+        "content": "Remote work policy allows flexible scheduling."   # texten som hamnar i prompten
+    },
+    {
+        "id": "confidential_payroll",
+        "embedding": np.array([0.79, 0.11]),          # nästan identisk med frågan
+        "metadata": {"access": "confidential"},       # borde aldrig nå en vanlig användare
+        "content": "Executive payroll adjustment memo Q4."
+    },
+    {
+        "id": "deleted_old_policy",
+        "embedding": np.array([0.78, 0.12]),
+        "metadata": {"access": "public", "deleted": True},   # raderad i källsystemet men embeddingen finns kvar
+        "content": "Old remote allowance rates (deprecated)."
+    }
+]
+
+# Användarens fråga som embedding, identisk med public_policy
+query_embedding = np.array([0.8, 0.1])
+```
+
+RAG-demo: de tre scenarierna
+
+Visar hur top-k och filtrering avgör vad som når modellen. Filtret måste ske före sökningen, inte efter.
+
+```python
+# Scenario 1: inget filter, top_k=2
+retrieve(top_k=2, apply_filter=False)
+# public_policy           score=1.0
+# confidential_payroll    score=0.999   <- konfidentiellt dokument hämtas bara för att det är likt
+
+# Scenario 2: inget filter, top_k=3
+retrieve(top_k=3, apply_filter=False)
+# public_policy           score=1.0
+# confidential_payroll    score=0.999
+# deleted_old_policy      score=0.998   <- högre top_k släpper även in det raderade dokumentet
+
+# Scenario 3: metadatafilter före rankningen
+retrieve(top_k=3, apply_filter=True)
+# public_policy           score=1.0     <- bara behöriga och aktuella dokument är kvar
+```
