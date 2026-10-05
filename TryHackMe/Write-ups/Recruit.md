@@ -83,6 +83,3 @@ curl "http://<IP>/file.php?cv=file://config.php"
 - Validate and whitelist the `cv` parameter; reject stream wrappers (`file://`, `http://`, `php://`, etc.)
 - Use parameterised queries / prepared statements instead of string-concatenated SQL
 - Hash passwords (bcrypt/argon2) instead of storing them in plaintext
-
-## References
--
