@@ -7,19 +7,17 @@
 | **Difficulty** | Medium |
 | **Estimated Time** | 60 minutes |
 | **Completions** | 7,838 |
-| **Date Completed** | 2026-10-05 |
+| **Date Completed** | YYYY-MM-DD |
 
 ## Overview
 Infiltrate Recruit's new portal. Map the site, hunt for flaws, and gain unauthorised access.
 
 ---
 
-## Task 1 — Recruit Challenge
-
 | # | Question | Answer |
 |---|----------|--------|
-| 1 | | THM{LOGGED_IN_USER} |
-| 2 | | admin / admin@001admin |
+| 1 | What is the flag value after logging in as a normal user? | THM{LOGGED_IN_USER} |
+| 2 | What is the flag value after logging in as admin? | THM{LOGGED_IN_ADM1N1} |
 
 ---
 
