@@ -7,7 +7,7 @@
 | **Difficulty** | Medium |
 | **Estimated Time** | 60 minutes |
 | **Completions** | 7,838 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-10-05 |
 
 ## Overview
 Infiltrate Recruit's new portal. Map the site, hunt for flaws, and gain unauthorised access.
