@@ -7,7 +7,7 @@
 | **Difficulty** | Medium |
 | **Estimated Time** | 30 minutes |
 | **Completions** | 43,734 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-10-07 |
 
 ## Overview
 SOC Analyst Johny has observed anomalous behaviour in the logs of a few Windows machines. The adversary appears to have access to some of them and has created a backdoor. His manager asked him to pull the logs from the suspected hosts and ingest them into Splunk for quick investigation. The task is to examine the logs and identify the anomalies.
