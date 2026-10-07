@@ -41,6 +41,7 @@ Recommended background rooms: [Splunk 101](https://tryhackme.com/room/splunk101)
 **MITRE ATT&CK:** N/A (scoping question)
 
 **Approach:**
+Use the correct time frame and index=main and you will find all collected events.
 
 **SPL query:**
 ```spl
@@ -61,11 +62,13 @@ index=main
 | Persistence | Create Account: Local Account | T1136.001 |
 
 **Approach:**
+The EventID for creating a new user is 4720. So when you filter for the right eventid you will en up with 1 matching event and in the message you will find the account name of th enew user 
+<img width="1052" height="176" alt="image" src="https://github.com/user-attachments/assets/35af2e87-f0aa-421a-850b-c2bb909effa8" />
+
 
 **SPL query:**
 ```spl
-index=main EventCode=4720
-| table _time host SubjectUserName TargetUserName
+index=main EventID=4720
 ```
 
 **Answer:**
@@ -82,11 +85,13 @@ A1berto
 | Defense Evasion | Modify Registry | T1112 |
 
 **Approach:**
+We know the new username "A1berto" and the EventID of 13 that gives us RegistryEvent
+<img width="1012" height="323" alt="image" src="https://github.com/user-attachments/assets/5d085a11-b885-4dce-96a6-d5437c3c9d63" />
+
 
 **SPL query:**
 ```spl
-index=main host="<infected host>" "<backdoor user>" (EventCode=12 OR EventCode=13 OR EventCode=4657)
-| table _time host EventCode TargetObject Image
+index=main EventID="13" A1berto
 ```
 
 **Answer:**
@@ -103,11 +108,11 @@ HKLM\SAM\SAM\Domains\Account\Users\Names\A1berto
 | Defense Evasion | Masquerading | T1036 |
 
 **Approach:**
+The name Alberto has the lowercase l switched with a 1 to look the same.
 
 **SPL query:**
 ```spl
 index=main
-| stats count by User
 ```
 
 **Answer:**
@@ -125,11 +130,11 @@ Alberto
 | Persistence | Create Account: Local Account | T1136.001 |
 
 **Approach:**
+<img width="1835" height="530" alt="image" src="https://github.com/user-attachments/assets/51b99bc2-c046-44b4-affb-c63e2aa36a6b" />
 
 **SPL query:**
 ```spl
-index=main "<backdoor user>" (CommandLine="*WMIC*" OR CommandLine="*net user*")
-| table _time host User ParentImage CommandLine
+index=main WMIC A1berto
 ```
 
 **Answer:**
@@ -146,11 +151,13 @@ C:\windows\System32\Wbem\WMIC.exe" /node:WORKSTATION6 process call create "net u
 | Persistence / Defense Evasion | Valid Accounts: Local Accounts | T1078.003 |
 
 **Approach:**
+To find out if there was any successful loggin with this backdoor user we will filter the search bar for the user and eventid: of 4624 and 4625. 
+<img width="786" height="302" alt="image" src="https://github.com/user-attachments/assets/da80c91e-becf-4f9e-b0c5-ee926ae928cb" />
+
 
 **SPL query:**
 ```spl
-index=main (EventCode=4624 OR EventCode=4625) "<backdoor user>"
-| stats count by EventCode host
+index=main (EventID="4624" OR EventID="4625") A1berto
 ```
 
 **Answer:**
@@ -167,11 +174,12 @@ index=main (EventCode=4624 OR EventCode=4625) "<backdoor user>"
 | Execution | Command and Scripting Interpreter: PowerShell | T1059.001 |
 
 **Approach:**
+<img width="2526" height="522" alt="image" src="https://github.com/user-attachments/assets/72da8805-4e2f-4c6c-9191-3096b04eafb9" />
+
 
 **SPL query:**
 ```spl
-index=main powershell
-| stats count by host
+index=main SourceName="Microsoft-Windows-PowerShell"
 ```
 
 **Answer:**
@@ -192,8 +200,7 @@ James.browne
 
 **SPL query:**
 ```spl
-index=main host="<infected host>" source="*PowerShell*" 
-| stats count by EventCode
+index=main SourceName="Microsoft-Windows-PowerShell"
 ```
 
 **Answer:**
@@ -211,6 +218,13 @@ index=main host="<infected host>" source="*PowerShell*"
 | Defense Evasion | Obfuscated Files or Information | T1027 |
 
 **Approach:**
+Inspecting the suspicious powershell command we find this long Base64 string.
+<img width="1793" height="494" alt="image" src="https://github.com/user-attachments/assets/0eace0e5-86c5-4e2a-aa2b-530a78bfc1a5" />
+We can take this Base64 string into CyberChef to decode it and see what it says. In the output we find yet another Base64 string that has /news.php behind it. 
+<img width="1277" height="506" alt="image" src="https://github.com/user-attachments/assets/3a36d973-341b-4858-8eea-09c8a2e9b488" />
+Decoding this Base64 string we get this.
+<img width="424" height="726" alt="image" src="https://github.com/user-attachments/assets/1839fa79-3764-478f-937a-5d6a5cbb6f1f" />
+and so we know the C2 the attacker is likely using.
 
 **SPL query:**
 ```spl
@@ -232,18 +246,17 @@ hxxp[://]10[.]10[.]10[.]5/news[.]php
 index=main
 
 # Backdoor account creation
-index=main EventCode=4720
+index=main EventID=4720
 
 # Login attempts (success / failure)
 index=main (EventCode=4624 OR EventCode=4625) "<user>"
-| stats count by EventCode
+| stats count by EventID
 
 # Remote account creation via WMIC
 index=main CommandLine="*WMIC*" CommandLine="*net user*"
 
 # Suspicious PowerShell
-index=main powershell
-| stats count by host
+index=main SourceName="Microsoft-Windows-PowerShell"
 ```
 
 ## Indicators of Compromise (IOCs)
