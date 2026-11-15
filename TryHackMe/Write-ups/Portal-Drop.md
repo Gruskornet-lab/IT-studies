@@ -7,7 +7,7 @@
 | **Difficulty** | Easy |
 | **Estimated Time** | 45 minutes |
 | **Completions** | 1,078 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-11-14 |
 
 ## Overview
 Investigate a suspected breach on a CRM portal using logs and EDR data. A WAF alert reports a web scan on crm.trypatchme.thm followed by a suspicious file upload anomaly. The web access logs and the EDR console must be correlated to decide whether it is a false positive or whether the portal has been breached.
