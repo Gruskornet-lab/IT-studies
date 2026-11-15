@@ -21,8 +21,8 @@ Triage a critical alert using Wireshark and Splunk to trace the network intrusio
 **Q1:** From which internal IP did the suspicious connection originate?
 
 **Approach:**
-Using splunk we can filter by log types. <img width="331" height="97" alt="bild" src="https://github.com/user-attachments/assets/73d6b573-fde9-4215-905c-590b925834b7" />
-
+Using splunk we can filter by log types.
+<img width="331" height="97" alt="bild" src="https://github.com/user-attachments/assets/73d6b573-fde9-4215-905c-590b925834b7" />
 sorting by the ids gives us the detected activity witch gives us alot of valuable information to start of our investigation with. 
 <img width="611" height="226" alt="bild" src="https://github.com/user-attachments/assets/ef59b55f-9a2f-4200-81d0-7217e5274005" />
 
