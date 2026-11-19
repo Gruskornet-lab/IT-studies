@@ -120,7 +120,7 @@ Invoke-Mimikatz -DumpCreds
 
 
 **Answer:**
-
+DisableRealtimeMonitoring
 
 ---
 
@@ -130,27 +130,27 @@ Invoke-Mimikatz -DumpCreds
 
 
 **Answer:**
-
+6612
 
 ---
 
 **Q11:** At what time did the threat actor successfully log in to the remote system from the beachhead?
 
 **Approach:**
-
+Taking the ip we found in the PsExec command "10.10.152.240" we can filter for this ip and the beachhead host ´´´index=* host="JP-BROWN-WS" DestinationIp="10.10.152.240"´´´ <img width="775" height="453" alt="image" src="https://github.com/user-attachments/assets/f566b0ff-6dd3-4385-9310-fc3a82306d5f" />
 
 **Answer:**
-
+2025-11-14 05:19:42
 
 ---
 
 **Q12:** What is the full path of the PowerShell script used by the threat actor to collect data?
 
 **Approach:**
-
+<img width="1820" height="960" alt="image" src="https://github.com/user-attachments/assets/42940b91-7f69-446b-8a98-6106bede4da6" />
 
 **Answer:**
-
+C:\Windows\Temp\Setup-BackupServer.ps1
 
 ---
 
@@ -160,7 +160,7 @@ Invoke-Mimikatz -DumpCreds
 
 
 **Answer:**
-
+.bak, .backup, .sql, .mdb
 
 ---
 
@@ -170,23 +170,9 @@ Invoke-Mimikatz -DumpCreds
 
 
 **Answer:**
-
+C:\Users\bkup-svc\AppData\Local\Temp\sysbackup_20251114.dat
 
 ---
 
-## Tools & Commands
-
-```bash
-# Add commands here
-```
-
-## Indicators of Compromise (IOCs)
-
-| Type | Value | Description |
-|------|-------|-------------|
-| IP |  |  |
-| Domain |  |  |
-| Hash |  |  |
-
 ## Key Takeaways
--
+- Some questions are not found by me, the files related to the task was not downloaded and I used all my knowledge to find the answers until I suspect that the answers is not in splunk and the explonation and answer was grabbed from the internet.
