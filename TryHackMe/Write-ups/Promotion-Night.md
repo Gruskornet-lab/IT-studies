@@ -70,10 +70,10 @@ BabyLockerKZ
 |  |  |  |
 
 **Approach:**
-
+The deployment method is reflected in WMI-related telemetry
 
 **Answer:**
-
+T1047
 
 ---
 
