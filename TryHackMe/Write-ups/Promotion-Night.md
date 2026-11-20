@@ -7,7 +7,7 @@
 | **Difficulty** | Medium |
 | **Estimated Time** | 120 minutes |
 | **Completions** | 476 |
-| **Date Completed** | YYYY-MM-DD |
+| **Date Completed** | 2026-11-20 |
 
 ## Overview
 Earn the quickest promotion ever, or make it your last day at ProbablyFine. As the Level 1 night-shift SOC analyst at an MSSP, you triage a critical alert ("Potential Ransom Note on DC-01") for the newly onboarded customer DeceptiTech. Using a Splunk instance with the scenario index, you reconstruct the full intrusion: beachhead, C2, discovery, lateral movement, ransomware deployment, and AWS credential theft, exfiltration and wiping.
@@ -35,10 +35,12 @@ Earn the quickest promotion ever, or make it your last day at ProbablyFine. As t
 |  |  |  |
 
 **Approach:**
-
+We now that alert we are working with is related to DC-01. If we make a simple search ´´´index=* \\DC-01´´´ we get a couple events that shows a "gaze.exe" 
+<img width="1581" height="763" alt="image" src="https://github.com/user-attachments/assets/2df7e4dd-a98a-404f-9344-300e155b41c3" />. 
+Making a quick search on the web we can get the information that this "gaze.exe" file is highly related to a ransomware group called Medusa 
 
 **Answer:**
-
+\\DC-01\SYSVOL\gaze.exe
 
 ---
 
@@ -51,10 +53,11 @@ Earn the quickest promotion ever, or make it your last day at ProbablyFine. As t
 |  |  |  |
 
 **Approach:**
-
+Looking for a persistence that survives a reboot I start with the two obvious schedule task and registry. Filtering for schedule task gives us a couple events but doesn't give us anything strongly related directly to the gaze.exe file. So searching for HKU which is registry keys for individual user we find events with the gaze.exe process as the Image file. Here we find the value the ransomware created for persistence. 
+<img width="1362" height="525" alt="image" src="https://github.com/user-attachments/assets/1a87cb69-a4ea-46e8-a5ad-5385705d9b1f" />
 
 **Answer:**
-
+BabyLockerKZ
 
 ---
 
